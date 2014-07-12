@@ -55,12 +55,12 @@ exports.flashMessages = function(req, res, next) {
 	
 };
 
-exports.exportProjects = function(req, res, next) {
+exports.exportPortfolio = function(req, res, next) {
 	
-	keystone.list('Projects').model.find().sort('name').exec(function(err, project) {
+	keystone.list('Portfolio').model.find().sort('name').exec(function(err, portfolio) {
 		if (err) return next(err);
-		req.project = project;
-		res.locals.project = project;
+		req.portfolio = portfolio;
+		res.locals.portfolio = portfolio;
 		next();
 	});
 	

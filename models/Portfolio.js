@@ -2,17 +2,17 @@ var keystone = require('keystone'),
   Types = keystone.Field.Types;
 
 /*
-Model for representing projects to include in the portfoliod
+Model for representing projects to include in the portfolio
 */
-var Projects = new keystone.List('Projects');
+var Portfolio = new keystone.List('Portfolio');
 
-Projects.add({
+Portfolio.add({
   name: { type: Types.Text, required: true, index:true },
   images: { type: Types.CloudinaryImages }
 });
 
 // Provide access to Keystone
-Projects.schema.virtual('canAccessKeystone').get(function() {
+Portfolio.schema.virtual('canAccessKeystone').get(function() {
    return this.isAdmin;
 });  
 
@@ -20,5 +20,5 @@ Projects.schema.virtual('canAccessKeystone').get(function() {
 * Registration
 */
 
-Projects.defaultColumns = 'name, images, isAdmin';
-Projects.register();
+Portfolio.defaultColumns = 'name, images, isAdmin';
+Portfolio.register();

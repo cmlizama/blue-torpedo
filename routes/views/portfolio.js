@@ -8,18 +8,18 @@ exports = module.exports = function(req, res, next) {
     view = new keystone.View(req, res);
   locals.projectId = req.params.project;
 
-  //locals.section = 'project';
+  //locals.section = 'portfolio';
 
-  var Projects = keystone.list('Projects');
+  var Portfolio = keystone.list('Portfolio');
 
   view.on('init', function(next) {
-    Projects.model.find().exec(function(err, projects) {
+    Portfolio.model.find().exec(function(err, projects) {
 
-      locals.projects = projects;
+      locals.portfolio = portfolio;
       next();
       });
     });
 
-    view.render('project');
+    view.render('portfolio');
 
 };
