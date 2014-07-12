@@ -2,4 +2,5 @@ extends ../layouts/default
 
 block content
   .container
-    p #{project.name}
+    each project in projects
+      a #{project.name}

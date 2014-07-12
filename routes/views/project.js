@@ -8,27 +8,18 @@ exports = module.exports = function(req, res, next) {
     view = new keystone.View(req, res);
   locals.projectId = req.params.project;
 
-  //locals.section = 'member';
+  //locals.section = 'project';
 
-  var Project = keystone.list('Project');
+  var Projects = keystone.list('Projects');
 
   view.on('init', function(next) {
-    Project.model.find().exec(function(err, project) {
+    Projects.model.find().exec(function(err, projects) {
 
-      var projectData = _.map(project, function(project){
-
-        if (project._id == locals.projectId){
-          locals.project = project;
-        } else {
-
-        }
-      });
-      locals.project = project;
-
+      locals.projects = projects;
       next();
+      });
     });
-  });
 
-  view.render('project');
+    view.render('project');
 
 };

@@ -4,15 +4,15 @@ var keystone = require('keystone'),
 /*
 Model for representing projects to include in the portfoliod
 */
-var Project = new keystone.List('Project');
+var Projects = new keystone.List('Projects');
 
-Project.add({
+Projects.add({
   name: { type: Types.Text, required: true, index:true },
   images: { type: Types.CloudinaryImages }
 });
 
 // Provide access to Keystone
-Project.schema.virtual('canAccessKeystone').get(function() {
+Projects.schema.virtual('canAccessKeystone').get(function() {
    return this.isAdmin;
 });  
 
@@ -20,5 +20,5 @@ Project.schema.virtual('canAccessKeystone').get(function() {
 * Registration
 */
 
-Project.defaultColumns = 'name, images, isAdmin';
-Project.register();
+Projects.defaultColumns = 'name, images, isAdmin';
+Projects.register();

@@ -57,7 +57,7 @@ exports.flashMessages = function(req, res, next) {
 
 exports.exportProjects = function(req, res, next) {
 	
-	keystone.list('Project').model.find().sort('name').exec(function(err, project) {
+	keystone.list('Projects').model.find().sort('name').exec(function(err, project) {
 		if (err) return next(err);
 		req.project = project;
 		res.locals.project = project;
