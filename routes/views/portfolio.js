@@ -13,13 +13,21 @@ exports = module.exports = function(req, res, next) {
   var Portfolio = keystone.list('Portfolio');
 
   view.on('init', function(next) {
-    Portfolio.model.find().exec(function(err, projects) {
+    Portfolio.model.find().sort('name').exec(function(err, portfolio) {
 
-      locals.portfolio = portfolio;
-      next();
+      var portfolioData = _.map(portfolio, function(project){
+
+        if (project._id == locals.projectId){
+          locals.project = project;
+        } else{
+
+        }
       });
-    });
+      locals.portfolio = portfolio;
 
+      next();
+    });
+  });
     view.render('portfolio');
 
 };

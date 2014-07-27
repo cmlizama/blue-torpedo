@@ -61,8 +61,9 @@ html
 
 		//- FOOTER
 		.container: #footer
-
-			p Work:
+			each project in portfolio				
+				a.project(class="#{project._id}" href="/#{project._id}")
+					div #{project.name}
 
 		//- JAVASCRIPT
 

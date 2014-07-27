@@ -1,6 +1,8 @@
 extends ../layouts/default
 
 block content
-  .container
-    each project in portfolio
-      a #{project.name}
+  .container.project
+      div.projectImage
+        img(src='#{project.image.url}')
+      div.projectName
+        a #{project.name}
