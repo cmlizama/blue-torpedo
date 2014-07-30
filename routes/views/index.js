@@ -9,6 +9,16 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 	
+	  //load siteAssets
+  var SiteAssets = keystone.list('SiteAssets');
+  view.on('init', function(next) {
+    SiteAssets.model.find().exec(function(err, assets){
+      locals.assets = assets;
+      //console.log(assets);
+      next();
+    });
+  });
+	
 	// Render the view
 	view.render('index');
 	
