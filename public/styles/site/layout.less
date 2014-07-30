@@ -12,21 +12,49 @@
   background-color: #D0D1CD;
   width: 100%;
   color: black;
+  list-style: none;
 }
-.footer a{
+
+.footer { overflow: hidden };
+
+.footer ul {
+  list-style-type: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  float: left;
+  left: 50%
+}
+
+
+.footer li a {
   color: black;
-
-}
-.gallery-image img{
-    display:block;
-    max-width:100%;
-    height:auto;
+  display: block;
 }
 
-.projectName{
+.footer ul li {
+  position: relative;
+  display: inline-block;
+  padding-left: 3px;
+  padding-right: 3px;
+  right: 50%;
+}
+
+.projectList {
+  height: 25px;
+}
+
+.projectName {
   text-align: center;
 }
-.projectName a{
+
+.projectName a {
   color: black;
   font-size: 24px;
+}
+
+.project {
+  padding-top: 10%;
 }

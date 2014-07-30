@@ -60,10 +60,11 @@ html
 
 
 		//- FOOTER
-		.container.footer: #footer
-			each project in portfolio				
-				a.project(class="#{project._id}" href="/#{project._id}")
-					div #{project.name}
+		.container.footer
+			ul.projectList
+				each project in portfolio				
+					li: a.project(class="#{project._id}" href="/#{project._id}")
+						div #{project.name}
 
 		//- JAVASCRIPT
 
