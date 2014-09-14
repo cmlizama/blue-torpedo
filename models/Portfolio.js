@@ -8,9 +8,9 @@ var Portfolio = new keystone.List('Portfolio');
 
 Portfolio.add({
   name: { type: Types.Text, required: true, index:true },
-  image1: { type: Types.CloudinaryImage },
-  image2: { type: Types.CloudinaryImage },
-  image3: { type: Types.CloudinaryImage }
+  image1: { type: Types.Url },
+  image2: { type: Types.Url },
+  image3: { type: Types.Url }
 });
 
 // Provide access to Keystone
