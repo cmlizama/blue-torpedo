@@ -11,16 +11,12 @@ exports = module.exports = function(req, res, next) {
   //locals.section = 'portfolio';
 
   var Portfolio = keystone.list('Portfolio');
-
   view.on('init', function(next) {
     Portfolio.model.find().sort('name').exec(function(err, portfolio) {
-
       var portfolioData = _.map(portfolio, function(project){
-
         if (project._id == locals.projectId){
           locals.project = project;
         } else{
-
         }
       });
       locals.portfolio = portfolio;

@@ -1,4 +1,6 @@
-var keystone = require('keystone');
+var keystone = require('keystone'),
+  async = require('async'),
+  _ = require('underscore');
 
 exports = module.exports = function(req, res) {
 	
@@ -15,6 +17,21 @@ exports = module.exports = function(req, res) {
     SiteAssets.model.find().exec(function(err, assets){
       locals.assets = assets;
       //console.log(assets);
+      next();
+    });
+  });
+
+  var Portfolio = keystone.list('Portfolio');
+  view.on('init', function(next) {
+    Portfolio.model.find().sort('name').exec(function(err, portfolio) {
+      var portfolioData = _.map(portfolio, function(projects){
+        if (projects._id == locals.projectId){
+          locals.projects = projects;
+        } else{
+        }
+      });
+      locals.portfolio = portfolio;
+
       next();
     });
   });

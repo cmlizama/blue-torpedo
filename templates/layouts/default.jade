@@ -10,14 +10,13 @@ html
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
 		title= title || 'bluetorpedo'
-		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
 		//- All .less files will be automatically compiled and minified in production.
 		
 		link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel="stylesheet")
 		link(href="/styles/site.min.css", rel="stylesheet")
-		link(href="http://fonts.googleapis.com/css?family=<link href='http://fonts.googleapis.com/css?family=<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>", rel="stylesheet")
+		link(href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css')
 
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
@@ -60,7 +59,8 @@ html
 
 			//- The content block should contain the body of your template's content
 			block content
-
+				.container
+					p YOO
 
 		//- FOOTER
 		.container.footer
