@@ -2,6 +2,8 @@ extends ../layouts/default
 
 block content
   .container.project
+      each project in portfolio
+        div
       div.projectName
         a #{project.name}
       div

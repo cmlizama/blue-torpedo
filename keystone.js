@@ -16,7 +16,6 @@ keystone.init({
 	
 	'less': 'public',
 	'static': 'public',
-	'favicon': 'public/favicon.ico',
 	
 	'views': 'templates/views',
 	'view engine': 'jade',

@@ -41,6 +41,8 @@ html
 
 		//- HEADER
 		#header: .container
+			div.header
+				a(href='/') Home
 
 
 		//- BODY
@@ -60,7 +62,8 @@ html
 			//- The content block should contain the body of your template's content
 			block content
 				.container
-					p YOO
+					div
+						p YOO
 
 		//- FOOTER
 		.container.footer
@@ -86,6 +89,7 @@ html
 			script(src='/keystone/js/content/editor.js')
 
 		//- Add scripts that are globally required by your site here.
+		script(src='/js/landing/landing.js')
 		script(src='/js/projects/projects.js')
 
 		//- Include template-specific javascript files by extending the js block
