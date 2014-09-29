@@ -57,10 +57,10 @@ exports.flashMessages = function(req, res, next) {
 
 exports.exportPortfolio = function(req, res, next) {
 	
-	keystone.list('Portfolio').model.find().sort('name').exec(function(err, portfolio) {
+	keystone.list('Portfolio').model.find().sort('name').exec(function(err, project) {
 		if (err) return next(err);
-		req.portfolio = portfolio;
-		res.locals.portfolio = portfolio;
+		req.project = project;
+		res.locals.project = project;
 		next();
 	});
 	
