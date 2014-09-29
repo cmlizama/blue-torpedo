@@ -43,7 +43,7 @@ html
 		#header: .container
 			div.header
 				a(href='/') Home
-				a(href='/contact/bluetorpedo') Contact
+				a(href='/contact') Contact
 
 
 		//- BODY
@@ -70,7 +70,7 @@ html
 		.container.footer
 			ul.projectList
 				each project in portfolio				
-					li: a.project(class="#{project._id}" href="/#{project._id}")
+					li: a.project(class="#{project._id}" href="/p/#{project._id}")
 						div #{project.name}
 
 		//- JAVASCRIPT
