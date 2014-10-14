@@ -2,8 +2,9 @@ extends ../layouts/default
 
 block content
   .container.project
-      each project in portfolio
-        div
+      //- each project in portfolio
+      //-   div
+    if (project.image1 && project.image2 && project.image3)
       div.projectName
         a #{project.name}
       div
@@ -24,3 +25,24 @@ block content
             label#img-dot-1.nav-dot(for='img-1')
             label#img-dot-2.nav-dot(for='img-2')
             label#img-dot-3.nav-dot(for='img-3')
+    if (project.image1 && project.image2)
+      div.projectName
+        a #{project.name}
+      div
+        ul.slides
+          input(type='radio', name='radio-btn', checked='checked', id="img-1")
+          li.slide-container
+            .slide
+              img(src='#{project.image1}')
+          input(type='radio', name='radio-btn', id="img-2")
+          li.slide-container
+            .slide
+              img(src='#{project.image2}')
+          li.nav-dots
+            label#img-dot-1.nav-dot(for='img-1')
+            label#img-dot-2.nav-dot(for='img-2')
+    if (project.image1)
+      div.projectName
+        a #{project.name}
+      div
+        img(src='#{project.image1}')
